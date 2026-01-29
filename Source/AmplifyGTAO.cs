@@ -50,7 +50,7 @@ namespace SPTAOReplacer.Source
 
             try
             {
-                string bundlePath = Path.Combine(BepInEx.Paths.PluginPath, "sptvr", "Assets", "amplifyao");
+                string bundlePath = Path.Combine(BepInEx.Paths.PluginPath, "SPTAOReplacer", "Assets", "amplifyao");
                 amplifyAOBundle = AssetBundle.LoadFromFile(bundlePath);
 
                 if (amplifyAOBundle == null)
@@ -112,25 +112,25 @@ namespace SPTAOReplacer.Source
             if (aoEffect != null)
             {
                 aoEffect.SampleCount = sampleCountLevel;
-                aoEffect.Radius = 0.8f;
-                aoEffect.Bias = 0.1f;
-                aoEffect.Thickness = 0.35f;
-                aoEffect.Intensity = 0.5f;
-                aoEffect.PowerExponent = 1.0f;
+                aoEffect.Radius = 1.2f;
+                aoEffect.Bias = 0.05f;
+                aoEffect.Thickness = 0.5f;
+                aoEffect.Intensity = 0.8f;
+                aoEffect.PowerExponent = 1.2f;
                 aoEffect.Downsample = false;
                 aoEffect.CacheAware = true;
                 aoEffect.BlurEnabled = true;
-                aoEffect.BlurRadius = 2;
-                aoEffect.BlurSharpness = 20;
+                aoEffect.BlurRadius = 3;
+                aoEffect.BlurSharpness = 15;
                 aoEffect.BlurPasses = 2;
-                aoEffect.FilterEnabled = false;
-                aoEffect.FilterBlending = 0.15f;
+                aoEffect.FilterEnabled = true;
+                aoEffect.FilterBlending = 0.5f;
                 aoEffect.FilterDownsample = false;
                 aoEffect.FadeEnabled = true;
-                aoEffect.FadeStart = 20f;
-                aoEffect.FadeLength = 50f;
+                aoEffect.FadeStart = 35f;
+                aoEffect.FadeLength = 65f;
                 aoEffect.FadeToIntensity = 0f;
-                aoEffect.Tint = new Color32(12, 12, 12, 255);
+                aoEffect.Tint = new Color32(8, 8, 10, 255);  // Slightly cooler tint
                 aoEffect.ApplyMethod = AmplifyOcclusionEffect.ApplicationMethod.PostEffect;
                 aoEffect.PerPixelNormals = AmplifyOcclusionEffect.PerPixelNormalSource.Camera;
             }

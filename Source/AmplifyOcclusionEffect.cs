@@ -241,17 +241,17 @@ namespace SPTAOReplacer.Source
         {
             if (m_occlusionMat == null)
             {
-                m_occlusionMat = AmplifyOcclusionCommon.CreateMaterialWithShaderName("Hidden/Amplify Occlusion/Occlusion", aThroughErrorMsg);
+                m_occlusionMat = AmplifyGTAO.occlusionMat;
             }
 
             if (m_blurMat == null)
             {
-                m_blurMat = AmplifyOcclusionCommon.CreateMaterialWithShaderName("Hidden/Amplify Occlusion/Blur", aThroughErrorMsg);
+                m_blurMat = AmplifyGTAO.blurMat;
             }
 
             if (m_applyOcclusionMat == null)
             {
-                m_applyOcclusionMat = AmplifyOcclusionCommon.CreateMaterialWithShaderName("Hidden/Amplify Occlusion/Apply", aThroughErrorMsg);
+                m_applyOcclusionMat = AmplifyGTAO.applyMat;
             }
 
             if (m_applyOcclusionMat != null)

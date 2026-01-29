@@ -1,5 +1,6 @@
 ﻿using BepInEx;
 using BepInEx.Logging;
+using SPTAOReplacer.ExamplePatches;
 
 namespace SPTAOReplacer
 {
@@ -15,7 +16,7 @@ namespace SPTAOReplacer
             MyLog = Logger;
             MyLog.LogInfo("plugin loaded!");
 
-            new SimplePatch().Enable();
+            new SetSSAOPatch().Enable();
         }
     }
 }
