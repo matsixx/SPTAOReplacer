@@ -9,3 +9,6 @@ There isn't any configuration on this currently, possibly in the future. It just
 To install, just copy the contents of the "AOReplacer" folder into your SPT directory.
 
 Support my work on Ko-fi: https://ko-fi.com/matsix
+
+
+Credits: AmplifyCreations - https://github.com/AmplifyCreations/AmplifyOcclusion
