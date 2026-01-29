@@ -1,19 +1,11 @@
-SPTAOReplacer
+**SPTAOReplacer**
 
-Use this template to create your own client mods!
+This is a total replacement of Tarkov's built in AO. Tarkov uses an AO method caled "HBAO" or horizon based ambient occlusion. This replacer uses "GTAO" or ground truth ambient occlusion. GTAO is a more modern and accurate method of calculating ambient occlusion.
 
-1. Click the green **Use this template** > **Create a new repository** button at the top right of this page
-2. Use something like GitBash to clone your new repo into a folder on your computer (https://git-scm.com/downloads) or download it manually with **Code > Download ZIP**
-   * Make sure you are cloning **YOUR** new repo, not the example repo itself
-3. Rename the following from _SPTAOReplacer_ to your new mod name:
-    * Folder the project is in
-    * **.csproj** file
-    * **.sln** file
-4. Open the **.sln** file with a text editor, CTRL+F for _SPTAOReplacer_ and replace it with your new mod name
-5. Open the **.csproj** file with a text editor, CTRL+F for _SPTAOReplacer_ and replace it with your new mod name
-6. Open your solution by double clicking your **.sln** file, double click **Plugin.cs**
-7. Press CTRL + Shift + F, click Replace in Files
-    * make sure **Look in** is set to **Entire solution**
-    * in Find field, enter: _SPTAOReplacer_
-    * in Replace field, enter your new mod name
-    * click Replace All in bottom right, click yes if prompted
+There isn't any configuration on this currently and I don't really plan on adding any. I'd rather not have people use this mod to crank the values to ridiculous levels and then share ugly screenshots... If you want to change the values, the project is open source, everything is in AmplifyGTAO.cs.
+
+**NOTE: Colored Ultra AO currently does the same as just Ultra in this mod since this GTAO doesn't have an equivalent**
+
+To install, simply copy the contents of the "SPTAOReplacer" folder into your SPT directory.
+
+Support my work on Ko-fi: https://ko-fi.com/matsix
