@@ -106,23 +106,23 @@ namespace SPTAOReplacer.Source
                 ESSAOMode.ColoredHighestQuality => SampleCountLevel.VeryHigh,
                 _ => SampleCountLevel.Medium
             };
-
+            /*
             if (aoEffect != null)
             {
                 aoEffect.SampleCount = sampleCountLevel;
-                aoEffect.Radius = 1.2f;
+                aoEffect.Radius = 1f;
                 aoEffect.Bias = 0.05f;
                 aoEffect.Thickness = 0.5f;
-                aoEffect.Intensity = 0.8f;
-                aoEffect.PowerExponent = 1.2f;
+                aoEffect.Intensity = 1f;
+                aoEffect.PowerExponent = 0.8f;
                 aoEffect.Downsample = false;
-                aoEffect.CacheAware = true;
+                aoEffect.CacheAware = false;
                 aoEffect.BlurEnabled = true;
                 aoEffect.BlurRadius = 3;
                 aoEffect.BlurSharpness = 15;
                 aoEffect.BlurPasses = 2;
-                aoEffect.FilterEnabled = true;
-                aoEffect.FilterBlending = 0.5f;
+                aoEffect.FilterEnabled = false;
+                //aoEffect.FilterBlending = 0.05f;
                 aoEffect.FilterDownsample = false;
                 aoEffect.FadeEnabled = true;
                 aoEffect.FadeStart = 35f;
@@ -131,6 +131,31 @@ namespace SPTAOReplacer.Source
                 aoEffect.Tint = new Color32(8, 8, 10, 255);  // Slightly cooler tint
                 aoEffect.ApplyMethod = AmplifyOcclusionEffect.ApplicationMethod.PostEffect;
                 aoEffect.PerPixelNormals = AmplifyOcclusionEffect.PerPixelNormalSource.Camera;
+            }
+            */
+            if (aoEffect != null)
+            {
+                aoEffect.SampleCount = sampleCountLevel;
+                aoEffect.Radius = 1f;
+                aoEffect.Bias = 0.1f;
+                aoEffect.Thickness = 0.5f;
+                aoEffect.Intensity = 2f;
+                aoEffect.PowerExponent = 0.8f;
+
+                aoEffect.Downsample = false;
+                aoEffect.CacheAware = true;
+
+                aoEffect.BlurEnabled = true;
+                aoEffect.BlurRadius = 3;
+                aoEffect.BlurSharpness = 10;
+                aoEffect.BlurPasses = 2;
+
+                aoEffect.FadeEnabled = true;
+                aoEffect.FadeStart = 35f;
+                aoEffect.FadeLength = 65f;
+
+                aoEffect.ApplyMethod = AmplifyOcclusionEffect.ApplicationMethod.Deferred;
+                aoEffect.PerPixelNormals = AmplifyOcclusionEffect.PerPixelNormalSource.GBuffer;
             }
         }
     }
