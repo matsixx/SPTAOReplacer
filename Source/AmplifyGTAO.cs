@@ -10,7 +10,7 @@ namespace SPTAOReplacer.Source
 {
     public class AmplifyGTAO : MonoBehaviour
     {
-        private static AssetBundle amplifyAOBundle; // Keep reference - don't unload shader bundles
+        private static AssetBundle amplifyAOBundle;
         private Camera currentCamera;
         private static AmplifyOcclusionEffect aoEffect;
 
@@ -21,8 +21,6 @@ namespace SPTAOReplacer.Source
         public static Shader occlusionShader;
         public static Shader blurShader;
         public static Shader applyShader;
-
-        private static float lastUpscale;
 
         private void Awake()
         {
@@ -50,7 +48,7 @@ namespace SPTAOReplacer.Source
 
             try
             {
-                string bundlePath = Path.Combine(BepInEx.Paths.PluginPath, "SPTAOReplacer", "Assets", "amplifyao");
+                string bundlePath = Path.Combine(BepInEx.Paths.PluginPath, "AOReplacer", "Assets", "amplifyao");
                 amplifyAOBundle = AssetBundle.LoadFromFile(bundlePath);
 
                 if (amplifyAOBundle == null)
