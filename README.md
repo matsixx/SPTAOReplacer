@@ -8,6 +8,8 @@ There isn't any configuration on this currently, possibly in the future. It just
 
 To install, just copy the contents of the "AOReplacer" folder into your SPT directory.
 
+This is compatible with Hollywood FX/Graphics but the ambient occlusion settings in that mod will be ignored in favor of this one. Hollywood Graphics uses the built in AO, this replaces that AO. Double ambient occlusion is bad so I want to avoid that happening.
+
 Support my work on Ko-fi: https://ko-fi.com/matsix
 
 
