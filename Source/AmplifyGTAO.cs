@@ -154,6 +154,8 @@ namespace SPTAOReplacer.Source
                 aoEffect.FadeStart = 35f;
                 aoEffect.FadeLength = 65f;
 
+                aoEffect.FilterEnabled = false;
+
                 aoEffect.ApplyMethod = AmplifyOcclusionEffect.ApplicationMethod.Deferred;
                 aoEffect.PerPixelNormals = AmplifyOcclusionEffect.PerPixelNormalSource.GBuffer;
             }

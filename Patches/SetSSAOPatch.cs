@@ -1,10 +1,13 @@
 ﻿using EFT;
+using EFT.CameraControl;
 using EFT.Settings.Graphics;
+using GPUInstancer;
 using HarmonyLib;
 using SPT.Reflection.Patching;
 using SPTAOReplacer.Source;
 using System.Reflection;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 namespace SPTAOReplacer.ExamplePatches
 {
