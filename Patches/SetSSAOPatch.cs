@@ -15,6 +15,7 @@ namespace SPTAOReplacer.ExamplePatches
     {
 
         public static ESSAOMode currentSsaoMode;
+        public static Camera aoCamera;
         protected override MethodBase GetTargetMethod()
         {
             return AccessTools.Method(typeof(CameraClass), nameof(CameraClass.SetSSAO));
@@ -26,15 +27,23 @@ namespace SPTAOReplacer.ExamplePatches
             __instance.Hbao_0.enabled = false;
             __instance.AmbientOcclusion_0.enabled = false;
             currentSsaoMode = ssaoMode;
-            AmplifyGTAO gtao;
-            Camera cam = __instance.Camera;
-            if (cam.GetComponent<AmplifyGTAO>() != null)
-                gtao = cam.GetComponent<AmplifyGTAO>();
+            AmplifyGTAO gtaoManager;
+            aoCamera = __instance.Camera;
+            if (aoCamera.GetComponent<AmplifyGTAO>() != null)
+                gtaoManager = aoCamera.GetComponent<AmplifyGTAO>();
             else
-                gtao = cam.gameObject.AddComponent<AmplifyGTAO>();
+                gtaoManager = aoCamera.gameObject.AddComponent<AmplifyGTAO>();
 
-            if (gtao != null)
-                gtao.SetAOSettings(ssaoMode);
+            if (gtaoManager != null)
+            {
+                gtaoManager.SetAOSettings(ssaoMode);
+
+                AmplifyOcclusionEffect gtaoEffect = aoCamera.GetComponent<AmplifyOcclusionEffect>();
+                if (ssaoMode != ESSAOMode.Off)
+                    gtaoEffect.enabled = true;
+                else
+                    gtaoEffect.enabled = false;
+            }
 
             return false;
         }

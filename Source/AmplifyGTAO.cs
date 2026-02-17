@@ -89,14 +89,6 @@ namespace SPTAOReplacer.Source
             if (aoEffect == null)
                 return;
 
-            if (ssaoMode == ESSAOMode.Off)
-            {
-                aoEffect.enabled = false;
-                return;
-            }
-
-            aoEffect.enabled = true;
-
             SampleCountLevel sampleCountLevel = ssaoMode switch
             {
                 ESSAOMode.FastestPerformance => SampleCountLevel.Low,
